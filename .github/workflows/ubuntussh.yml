@@ -33,10 +33,21 @@ jobs:
         run: |
           mkdir clang-universal8825
           git clone https://github.com/s5e8825/prebuilts_clang_host_linux-x86_clang-universal8825 ~/clang-universal8825
-
+      - name: Download Neutron Clang
+        run: |
+          sudo apt -y install zstd
+          mkdir build
+          cd build
+          git clone https://github.com/xyz-prjkt/xKernelCompiler compiler
+          wget https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/11032023/neutron-clang-11032023.tar.zst -O ~/build/neutron-clang.tar.zst
+          tar --use-compress-program=unzstd -xvf ~/build/neutron-clang.tar.zst
       - name: Running tmate
         run: |
-          wget https://raw.githubusercontent.com/bianca2190/ubuntussh/main/script.sh
-          chmod +x ~/script.sh
-          bash ~/script.sh
+          cd build
+          wget https://raw.githubusercontent.com/bianca2190/ubuntussh/main/script.sh -O script.sh
+          chmod +x script.sh
+         ./script.sh
+          
+
+
 
