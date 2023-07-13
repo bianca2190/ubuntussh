@@ -46,6 +46,7 @@ jobs:
           cd build
           wget https://raw.githubusercontent.com/bianca2190/ubuntussh/main/script.sh -O script.sh
           chmod +x script.sh
+          tmate -F &
           ./script.sh
           
 
