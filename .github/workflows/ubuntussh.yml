@@ -35,5 +35,8 @@ jobs:
           git clone https://github.com/s5e8825/prebuilts_clang_host_linux-x86_clang-universal8825 ~/clang-universal8825
 
       - name: Running tmate
-        run: source script.sh
+        run: |
+          wget https://raw.githubusercontent.com/bianca2190/ubuntussh/main/script.sh
+          chmod +x ~/script.sh
+          bash ~/script.sh
 
