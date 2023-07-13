@@ -26,6 +26,7 @@ jobs:
           cd zyc
           wget https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230713-release/Clang-17.0.0-20230713.tar.gz -O zyc-clang.tar.gz
           tar -xvf zyc-clang.tar.gz
+          cd ..
           cd vayu
           wget https://raw.githubusercontent.com/Yusna21/script-compile/main/compile_with_tc.sh -O compile.sh
       - name: Setup tmate session
