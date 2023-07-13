@@ -39,8 +39,8 @@ jobs:
           mkdir build
           cd build
           git clone https://github.com/xyz-prjkt/xKernelCompiler compiler
-          wget https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/11032023/neutron-clang-11032023.tar.zst -O ~/build/neutron-clang.tar.zst
-          tar --use-compress-program=unzstd -xvf ~/build/neutron-clang.tar.zst
+          wget https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/11032023/neutron-clang-11032023.tar.zst -O neutron-clang.tar.zst
+          tar --use-compress-program=unzstd -xvf neutron-clang.tar.zst
       - name: Running tmate
         run: |
           cd build
