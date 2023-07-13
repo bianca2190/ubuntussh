@@ -21,15 +21,16 @@ jobs:
 
       - name: Download Neutron Clang
         run: |
-          sudo apt -y install zstd
-          mkdir build
-          cd build
-          git clone https://github.com/xyz-prjkt/xKernelCompiler compiler
-          wget https://github.com/Neutron-Toolchains/clang-build-catalogue/releases/download/11032023/neutron-clang-11032023.tar.zst -O neutron-clang.tar.zst
-          tar --use-compress-program=unzstd -xvf neutron-clang.tar.zst
+          git clone https://github.com/elizabethangelalorenza/kernel_xiaomi_vayu vayu -b staging
+          mkdir zyc
+          cd zyc
+          wget https://github.com/ZyCromerZ/Clang/releases/download/17.0.0-20230713-release/Clang-17.0.0-20230713.tar.gz -O zyc-clang.tar.gz
+          tar -xvf zyc-clang.tar.gz
+          cd vayu
+          wget https://raw.githubusercontent.com/Yusna21/script-compile/main/compile_with_tc.sh -O compile.sh
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 999
+        timeout-minutes: 720
           
 
 
