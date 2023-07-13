@@ -1,6 +1,5 @@
 #!/bin/bash
 
-tmate -F &
 
 looping () {
     sleep 1;
